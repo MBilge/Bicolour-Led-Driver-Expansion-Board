@@ -48,14 +48,6 @@ void AllPinINPUT() // will switch off all leds
   }
 }
 
-/*  Yapilacak showlar
- * 6 - Walking green
- * 7 - Walking red
- * 8 - Mixing red/green/off
- * 9 - 
- * 10 -
- */
-
  void AllLedsGreen()
  {
   for (int leds=0 ; leds<16 ; leds++) Led(leds,Green);
