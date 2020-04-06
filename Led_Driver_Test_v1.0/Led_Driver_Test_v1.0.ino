@@ -238,6 +238,17 @@ void UnFillingRedToLeft(int t,int r)
   }
 }
 
+void LedMix(word w)
+{
+ AllPinOUTPUT();
+ 
+ for (int bits = 0; bits < 16; bits++) 
+ {
+    if (w & (1 << bits)) { Led(bits, Green); }
+    else                 { Led(bits, Red  ); }
+ }
+}
+
 void loop()
 {
   AllLedsOff(); // switch all leds off
@@ -261,5 +272,8 @@ void loop()
   UnFillingRedToRight(100,1);
   FillingRedToLeft(100,1);
   UnFillingRedToLeft(100,1);
+ 
+  LedMix(0b0000111100001111); delay(200);
+  LedMix(0b1100110011001100); delay(200);
 
 }
